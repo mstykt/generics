@@ -17,6 +17,9 @@ public class GenericTypes {
         Store<String> store = new Store<String>();
         store.setItem("deneme");
         System.out.println(store);
+
+        HashTable<String, Integer> hashTable = new HashTable<String, Integer>("Apple",45);
+        System.out.println(hashTable);
     }
 }
 
@@ -53,5 +56,23 @@ class Store<T> {
     @Override
     public String toString() {
         return item.toString();
+    }
+}
+
+class HashTable<K,V> {
+    private K key;
+    private V value;
+
+    public HashTable(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "HashTable{" +
+                "key=" + key +
+                ", value=" + value +
+                '}';
     }
 }
